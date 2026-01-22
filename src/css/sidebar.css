@@ -5,7 +5,7 @@
     left: 0;
     width: 16rem;
     height: 100dvh;
-    padding: var(--lm-space-4);
+    padding: var(--lm-space-1);
     background-color: var(--lm-background);
     border-right: 1px solid var(--lm-border);
     overflow-y: auto;

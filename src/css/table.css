@@ -1,5 +1,6 @@
 @layer base {
   table {
+    table-layout: fixed;
     width: 100%;
     font-size: var(--text-7);
   }
@@ -8,16 +9,19 @@
     border-bottom: 1px solid var(--border);
   }
 
+  th, td {
+    overflow-wrap: break-word;
+  }
+
   th {
-    padding: var(--space-3) var(--space-4);
+    padding: var(--space-3) var(--space-2);
     text-align: left;
     font-weight: var(--font-medium);
     color: var(--muted-foreground);
   }
 
   td {
-    padding: var(--space-3) var(--space-4);
-    vertical-align: middle;
+    padding: var(--space-3) var(--space-2);
   }
 
   tbody tr {

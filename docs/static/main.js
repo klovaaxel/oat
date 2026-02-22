@@ -128,7 +128,10 @@ function highlightNav() {
 }
 
 function toggleTheme() {
-  var theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  var cs = document.documentElement.style.colorScheme;
+  var isDark = cs === 'dark' || (!cs && matchMedia('(prefers-color-scheme: dark)').matches);
+  var theme = isDark ? 'light' : 'dark';
+  document.documentElement.style.colorScheme = theme;
   document.documentElement.setAttribute('data-theme', theme);
   localStorage.setItem('theme', theme);
 }

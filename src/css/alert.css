@@ -1,7 +1,5 @@
 @layer components {
   [role="alert"] {
-    --bg-amount: 8%;
-
     position: relative;
     display: flex;
     gap: var(--space-3);
@@ -11,10 +9,6 @@
     border-radius: var(--radius-medium);
     font-size: var(--text-7);
 
-    [data-theme="dark"] & {
-      --bg-amount: 20%;
-    }
-
     &[data-variant] {
       border: none;
     }
@@ -22,7 +16,10 @@
     &[data-variant="error"],
     &[data-variant="danger"] {
       color: var(--danger);
-      background-color: color-mix(in srgb, var(--danger) var(--bg-amount), transparent);
+      background-color: light-dark(
+        color-mix(in srgb, var(--danger) 8%, transparent),
+        color-mix(in srgb, var(--danger) 20%, transparent)
+      );
 
       & a {
         color: var(--danger);
@@ -31,7 +28,10 @@
 
     &[data-variant="success"] {
       color: var(--success);
-      background-color: color-mix(in srgb, var(--success) var(--bg-amount), transparent);
+      background-color: light-dark(
+        color-mix(in srgb, var(--success) 8%, transparent),
+        color-mix(in srgb, var(--success) 20%, transparent)
+      );
 
       & a {
         color: var(--success);
@@ -40,7 +40,10 @@
 
     &[data-variant="warning"] {
       color: var(--warning);
-      background-color: color-mix(in srgb, var(--warning) var(--bg-amount), transparent);
+      background-color: light-dark(
+        color-mix(in srgb, var(--warning) 8%, transparent),
+        color-mix(in srgb, var(--warning) 20%, transparent)
+      );
 
       & a {
         color: var(--warning);
